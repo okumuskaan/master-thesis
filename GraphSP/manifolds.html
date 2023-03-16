@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Signal Processing Notes</title>
+
+    <link rel="icon" type="image/x-icon"
+          href="../../resources/imgs/favicon/kaan-logo.png">
+    <link href="./main.css" rel="stylesheet" type="text/css">
+    <link href="./content.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async>
+    </script>
+    <script src="./main.js" async></script>
+    <script src="./search.js" async></script>
+    <script src="../underConstruction.js" async></script>
+</head>
+<body>
+
+<div class="sidenav">
+    <h3 id="nav-title">Graph Signal Processing</h3>
+    <a href="#gs-box" id="gs-nav">1 - Graph Signals </a>
+    <div class="dropdown-container" id="gs-drp">
+        <a href="#gs-def_box" id="gs-def_nav">1.1. Graph
+            Signals Definition</a>
+    </div>
+</div>
+
+<div id="toolbar">
+    <form id="search-container">
+        <div id="search">
+            <button type="submit">
+                <img id="search-img"
+                     src="./imgs/search-white.png">
+            </button>
+            <input type="search" placeholder="Search smt"
+                   id="search-text" autocomplete="off">
+        </div>
+    </form>
+</div>
+
+<main>
+
+    <h1 id="main-title">Graph Signal Processing</h1>
+    <div id="gs-box">
+        <h2>1 - Graph Signals</h2>
+        <div class="grid-two-col" id="gs-def_box">
+            <div class="grid-left-col grid-top-left-col">
+                <h2>Graph Signal Processing</h2>
+            </div>
+            <div class="grid-right-col grid-top-right-col">
+                <h2>Classical Signal Processing</h2>
+            </div>
+
+            <div class="grid-left-col grid-content-bottom-col">
+                <strong><u>Graph Signals Definition</u></strong>
+
+                <p>
+                    A graph is defined as $$\mathcal{G} = \{ \mathcal{V},
+                    \mathcal{E}, W\} $$
+                </p>
+                <ul style="text-align: left;">
+                    <li>$\mathcal{V}$: Set of vertices</li>
+                    <li>$\mathcal{E}$: Set of edges, where an edge is
+                        defined as $e=(i,j)$, which connects vertices $i$
+                        and $j$</li>
+                    <li>$W$: Adjacency matrix
+                        $$
+                            W_{i,j} = \begin{cases}
+                                0 & \text{if $i=j$ (no self-loop is assumed)}\\
+                                \text{edge weight of $(i,j)$} & \text{if
+                        $i\neq j$ and $v_i$, $v_j$ are connected} \\
+                                0 & \text{o.w.}
+                            \end{cases}
+                        $$
+                    </li>
+                </ul>
+
+                <p>
+                    A graph signal is defined as $$f : \mathcal{V}
+                    \rightarrow \mathbb{R}$$ $$\textbf{f} \in
+                    \mathbb{R}^N$$ with a graph $\mathcal{G} = \{ \mathcal{V},
+                    \mathcal{E}, W\} $
+                </p>
+                <p class="exp-title">Exp:</p>
+                <p class="img-graph-title">
+                    Petersen Graph
+                </p>
+                <img style="width: 350px;"
+                     src="fig/petersen_graph.png">
+
+                <p class="img-title">
+                    Petersen Graph Signal
+                </p>
+                <img style="width: 350px;"
+                     src="fig/signal_exp.png">
+                <p class="img-xlabel">
+                    Vertex Indices
+                </p>
+            </div>
+            <div class="grid-right-col grid-content-bottom-col">
+                <strong><u>Finite-Length DT Signals Definition</u></strong>
+                <p>A finite-length signal is defined as $$f : \mathbb{Z}
+                    \rightarrow \mathbb{R}$$ $$\textbf{f} \in
+                    \mathbb{R}^N$$ with a graph $\mathcal{G} = \{ \mathcal{V},
+                    \mathcal{E}, W\}$ with $W_{i,j} = 1$ if $i=j+1$ or $ i+1=j$,
+                    otherwise it's equal to $0$.
+                </p>
+                <p>
+                    So, a finite-length signal can be seen as a graph signal
+                    where the graph is a line with the same edge weight
+                    that represents the regularly spaced vertices.
+                </p>
+                <p class="exp-title">Exp:</p>
+                <p class="img-graph-title">
+                    Regularly Sized Graph
+                </p>
+                <img style="
+                        width: 350px;"
+                     src="fig/regspaced_graph.png">
+                <p class="img-title">
+                    Finite Length DT Signal
+                </p>
+                <img style="width: 350px;"
+                     src="fig/signal_exp.png">
+                <p class="img-xlabel">
+                    Vertex Indices
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <div class="line"></div>
+
+</main>
+
+<footer>
+    Copyright © Kaan Okumus, 2023. All rights reserved.
+</footer>
+
+</body>
+</html>
